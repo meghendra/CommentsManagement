@@ -1,7 +1,15 @@
 
-
 p {
     margin: 0 0 1em;
+}
+
+.blog-content{
+    font-size: 18px;
+    line-height: 30px;
+    font-family: 'Guardian TextEgyp',serif!important;
+    font-weight: 400;
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
 
 .center {
@@ -19,7 +27,7 @@ p {
 
 .comment-img {
     float: left;
-    margin-right: 33px;
+    margin-right: 20px;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -49,8 +57,6 @@ p {
     color: #666;
 }
 
-/* Decoration */
-
 .comments,
 .comment {
     position: relative;
@@ -68,6 +74,18 @@ p {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 1em;
+}
+
+.textarea2 {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
 }
 
 .text{
@@ -78,22 +96,10 @@ p {
 }
 
 .comment-text{
-	width: 70%;
+	width: 80%;
 	padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-}
-
-.delete-button{
-	position:absolute;
-    width: 10%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    margin: 13px 10px 10px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
 .button {
@@ -102,52 +108,58 @@ p {
     background-color: #4CAF50;
     color: white;
     padding: 15px;
-    margin: 13px 10px 10px 10px;
+    margin: 14px 10px 10px 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 1em;
+    outline: none;
 }
 
 .like-button {
 	background-color: white;
-	color: #f21750;
+	color: #20b2f0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 1.25em;
+    outline: none;
 }
 
 .like-button:hover {
-    background-color: #f21750;
+    background-color: #20b2f0;
     color: white;
 	}
 
 .delete-button {
 	width: 10%;
 	background-color: white;
-	font-size: 1em;
-	color: #f29b0d;
+	font-size: 1.25em;
+	color: #ff2100;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     padding: 5px;
-    margin: 13px 10px 10px 10px;
+    margin: 14px 10px 10px 10px;
+    outline: none;
 }
 
 .delete-button:hover {
-    background-color: #f29b0d;
+    background-color: #ff2100;
     color: white;
 	}
 
 .edit-button {
     width: 10%;
 	background-color: white;
-	font-size: 1em;
+	font-size: 1.25em;
 	color: #f29b0d;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     padding: 5px;
     margin: 13px 10px 10px 10px;
+    outline: none;
 }
 
 .edit-button:hover {

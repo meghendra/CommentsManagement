@@ -1,15 +1,15 @@
 <!doctype html>
-<html ng-app="demo">
+<html ng-app="app">
 <head>
 <meta http-equiv="cache-control" content="no-store" />
-<title>Hello AngularJS</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Welcome to my blog post!</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body, h1, h2, h3, h4, h5 {
 	font-family: "Raleway", sans-serif
 }
-
 .center {
 	margin: auto;
 	width: 60%;
@@ -18,7 +18,7 @@ body, h1, h2, h3, h4, h5 {
 </style>
 
 <script src="js/angular.js"></script>
-<script src="js/demo.js"></script>
+<script src="js/app.js"></script>
 </head>
 
 <body>
@@ -30,33 +30,40 @@ and is wrapped around the whole page content, except for the footer in this exam
 		<!-- Header -->
 		<header>
 			<h1>
-				<b>The chaos of unlocking your phone in 2018</b>
+				<b>Colombia is conducting widescale illegal surveillance</b>
 			</h1>
 		</header>
 		<div>
 			<div>
 				<!-- Blog entry -->
 				<div>
-					<!-- 					<img src="/woods.jpg" alt="Nature" style="width: 100%"> -->
 					<div>
-						<h3>Fingerprints, voices, faces, eyes, double fingerprints.</h3>
-						<h5>February 28th, 2018</h5>
+						<h3>How Colombia Built a Massive Surveillance 'Shadow State'.</h3>
+						<h5>Jon Fingas, <a href="https://twitter.com/jonfingas">@jonfingas</a> August 31st, 2015</h5>
 					</div>
 
-					<div>
-						<p>PIN codes and patterns are passe. MWC 2018 kicked off with
-							the usual fanfare of a major flagship launch -- the Galaxy S9.
-							With it, Samsung introduced its own, new, face unlock feature.
-							Google may have added the feature to Android many years ago, but
-							it seems technology has progressed enough to make it worth
-							resurrecting by Samsung -- with some extra biometric backup. The
-							House of Galaxy might have also felt the competitive tug of
-							Apple's surprisingly slick Face ID unlock feature on the iPhone
-							X. Samsung wasn't the only company innovating when it comes to
-							how we get our smartphone working. And it's not just the
-							thousand-dollar flagships, either. Biometrics are here in a big
-							way, although no-one seems to know which method's best. How many
-							of these techniques will last to see 2020?</p>
+					<div class="blog-content">
+						<img src="./images/dims.jpeg" style="width: 90%">
+						<p>
+						Want to know why it's important to have checks on mass surveillance programs? 
+						Colombia should serve as a good example. Privacy International reports that the country 
+						not only collects bulk internet and phone data on a grand scale, but violates the law in 
+						the process -- it's supposed to require judicial approval for any surveillance, but 
+						regularly ignores that oversight. Colombian agencies have also relied on controversial 
+						tools like IMSI catchers (which scoop up nearby cellphone data) and Hacking Team's spyware, 
+						and they've sought to expand their powers rather than rein things in.
+						</p>
+						<p> 
+						It's no secret that Colombia has a history of surveillance, fueled in no small part by 
+						its decades-long battles with rebels and drug cartels. And unfortunately, the pressure 
+						to keep an eye on communications isn't likely to drop anytime soon. A Venezuelan immigrant 
+						crackdown has forced many Colombia-born residents back to their homeland, increasing tensions 
+						between the two countries. It may take a long while before the political climate is truly 
+						conducive to surveillance reform.
+						</p>
+						<p>
+						[Image credit: AP Photo/Fernando Vergara]
+						</p>
 					</div>
 				</div>
 				<hr>
@@ -70,30 +77,38 @@ and is wrapped around the whole page content, except for the footer in this exam
 								<textarea class="textarea" ng-model="txtcomment"
 									placeholder="Your comment here">
 							</textarea>
-								<button class="button" ng-click='btn_add();'>Post</button>
+								<button class="button" ng-click='btn_add();'>Post it!</button>
 							</form>
 						</div>
 						<br />
 						<section class="comments">
 							<article class="comment" ng-repeat="comment in comments">
-								<!-- 								<a class="comment-img" href="#non"> <img -->
-								<!-- 									src="http://lorempixum.com/50/50/people/1" alt="" width="50" -->
-								<!-- 									height="50"> -->
-								<!-- 								</a> -->
+								<a class="comment-img" href="#non"> 
+									<img src="./images/user.png" width="60" height="60">
+								</a>
 								<div class="comment-body">
 									<div class="text">
-										<p class="comment-text">{{comment.content}}</p>
-										<button class="edit-button" ng-click='btn_edit(comment.commentId);'>
-											<i class="fa fa-pencil-square-o"> </i>
-										</button>
-										<button class="delete-button" ng-click='btn_delete(comment.commentId);'>
+										<p class="comment-text" ng-hide="editing" ng-click="editing = true">
+										{{comment.content}}
+										</p>
+										<form ng-show="editing" ng-submit="editing = false">
+										<textarea class="textarea2" ng-model="comment.content"
+												placeholder="Comment" ng-required>
+										</textarea> 
+												<br/>
+											<button class="button" ng-click='btn_edit(comment.commentId);'>Save</button>
+										</form>
+										<button class="delete-button"
+											ng-click='btn_delete(comment.commentId);'>
 											<i class="fa fa-trash"> </i>
 										</button>
 									</div>
 									<p class="attribution">
-										by {{comment.userName}} on {{comment.timeStamp.substr(0,25)}} &nbsp
-										<button class="like-button" ng-click='btn_like(comment.commentId);'>
-											<i class="fa fa-heart"> </i> {{comment.numberOfLikes}} 
+										{{comment.userName}} posted on {{comment.timeStamp.substr(0,25)}}
+										&nbsp
+										<button class="like-button"
+											ng-click='btn_like(comment.commentId);'>
+											<i class="fa fa-thumbs-o-up"> </i> {{comment.numberOfLikes}}
 											{{comment.numberOfLikes == 1 ? 'Like' : 'Likes'}}
 										</button>
 									</p>

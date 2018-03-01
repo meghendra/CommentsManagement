@@ -1,4 +1,4 @@
-var myApp =  angular.module('demo', []);
+var myApp =  angular.module('app', []);
 
 myApp.controller('FormController', function ($scope, $http, $filter){
 //	get all comments from the REST endpoint
@@ -52,7 +52,19 @@ myApp.controller('FormController', function ($scope, $http, $filter){
     then(function(response) {
         var index = $scope.comments.indexOf(comment);
         $scope.comments.splice(index, 1);
-        console.log(index,comment,$scope.comments)
     });
+    }
+    
+ // edit comment
+    $scope.btn_edit = function(cId) {
+    	var comment = $filter('filter')($scope.comments, {"commentId":cId})[0]
+    	var index = $scope.comments.indexOf(comment);
+    	comment.timeStamp = new Date().toUTCString()
+    	$http.post('http://localhost:8080/CommentsManagement/rest/CommentsService/editcomment',
+    			JSON.stringify(comment)).
+        then(function(response) {
+        		comment = response.data;
+            $scope.comments[index]=comment;
+        });
     }
 });

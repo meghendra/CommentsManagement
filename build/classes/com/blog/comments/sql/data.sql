@@ -2,7 +2,6 @@
 -- use perfectsense;
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Comments;
-DROP TABLE IF EXISTS Replies;
 
 CREATE TABLE Users
 (
@@ -43,19 +42,6 @@ INSERT INTO Comments (comment_ID, article_ID, user_name, time_stamp, content, pa
 INSERT INTO Comments (comment_ID, article_ID, user_name, time_stamp, content, parent_ID) VALUES (7, 1, 'Bob', '2013-08-05 18:20:00', 'Alice has so many things to say...', 5);
 
 
-CREATE TABLE Replies
-(
-    reply_ID INT PRIMARY KEY AUTO_INCREMENT,
-    parent_comment_ID INT NOT NULL, 
-    child_comment_ID INT NOT NULL
-);
-
--- replies to comments
-INSERT INTO Replies (parent_comment_ID, child_comment_ID) VALUES (1, 5);
-INSERT INTO Replies (parent_comment_ID, child_comment_ID) VALUES (2, 6);
-INSERT INTO Replies (parent_comment_ID, child_comment_ID) VALUES (5, 7);
-
 select * from Comments;
 select * from Users;
-select * from Replies;
 
