@@ -1,0 +1,167 @@
+
+
+p {
+    margin: 0 0 1em;
+}
+
+.center {
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+}
+
+.comment {
+    overflow: hidden;
+    padding: 0 0 1em;
+    margin: 0 0 1em;
+    *zoom: 1;
+}
+
+.comment-img {
+    float: left;
+    margin-right: 33px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.comment-img img {
+    display: block;
+}
+
+.comment-body {
+    overflow: hidden;
+}
+
+.comment .text {
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.comment .text p:last-child {
+    margin: 0;
+}
+
+.comment .attribution {
+    margin: 0.5em 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Decoration */
+
+.comments,
+.comment {
+    position: relative;
+}
+
+.comments{
+	border-bottom: 1px solid #ddd; 
+}
+
+.textarea {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.text{
+	padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.comment-text{
+	width: 70%;
+	padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+}
+
+.delete-button{
+	position:absolute;
+    width: 10%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    margin: 13px 10px 10px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button {
+	position:absolute;
+    width: 10%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    margin: 13px 10px 10px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.like-button {
+	background-color: white;
+	color: #f21750;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.like-button:hover {
+    background-color: #f21750;
+    color: white;
+	}
+
+.delete-button {
+	width: 10%;
+	background-color: white;
+	font-size: 1em;
+	color: #f29b0d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 13px 10px 10px 10px;
+}
+
+.delete-button:hover {
+    background-color: #f29b0d;
+    color: white;
+	}
+
+.edit-button {
+    width: 10%;
+	background-color: white;
+	font-size: 1em;
+	color: #f29b0d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 13px 10px 10px 10px;
+}
+
+.edit-button:hover {
+    background-color: #f29b0d;
+    color: white;
+	}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.commentbox {
+ 	padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html ng-app="demo">
+<head>
+<meta http-equiv="cache-control" content="no-store" />
+<title>Hello AngularJS</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1, h2, h3, h4, h5 {
+	font-family: "Raleway", sans-serif
+}
+
+.center {
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+}
+</style>
+
+<script src="js/angular.js"></script>
+<script src="js/demo.js"></script>
+</head>
+
+<body>
+
+	<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+	<div class="center" style="max-width: 1400px">
+
+		<!-- Header -->
+		<header>
+			<h1>
+				<b>The chaos of unlocking your phone in 2018</b>
+			</h1>
+		</header>
+		<div>
+			<div>
+				<!-- Blog entry -->
+				<div>
+					<!-- 					<img src="/woods.jpg" alt="Nature" style="width: 100%"> -->
+					<div>
+						<h3>Fingerprints, voices, faces, eyes, double fingerprints.</h3>
+						<h5>February 28th, 2018</h5>
+					</div>
+
+					<div>
+						<p>PIN codes and patterns are passe. MWC 2018 kicked off with
+							the usual fanfare of a major flagship launch -- the Galaxy S9.
+							With it, Samsung introduced its own, new, face unlock feature.
+							Google may have added the feature to Android many years ago, but
+							it seems technology has progressed enough to make it worth
+							resurrecting by Samsung -- with some extra biometric backup. The
+							House of Galaxy might have also felt the competitive tug of
+							Apple's surprisingly slick Face ID unlock feature on the iPhone
+							X. Samsung wasn't the only company innovating when it comes to
+							how we get our smartphone working. And it's not just the
+							thousand-dollar flagships, either. Biometrics are here in a big
+							way, although no-one seems to know which method's best. How many
+							of these techniques will last to see 2020?</p>
+					</div>
+				</div>
+				<hr>
+				<div>
+					<div>
+						<h4>Comments</h4>
+					</div>
+					<div id='dv1' ng-controller="FormController">
+						<div class="commentbox">
+							<form>
+								<textarea class="textarea" ng-model="txtcomment"
+									placeholder="Your comment here">
+							</textarea>
+								<button class="button" ng-click='btn_add();'>Post</button>
+							</form>
+						</div>
+						<br />
+						<section class="comments">
+							<article class="comment" ng-repeat="comment in comments">
+								<!-- 								<a class="comment-img" href="#non"> <img -->
+								<!-- 									src="http://lorempixum.com/50/50/people/1" alt="" width="50" -->
+								<!-- 									height="50"> -->
+								<!-- 								</a> -->
+								<div class="comment-body">
+									<div class="text">
+										<p class="comment-text">{{comment.content}}</p>
+										<button class="edit-button" ng-click='btn_edit(comment.commentId);'>
+											<i class="fa fa-pencil-square-o"> </i>
+										</button>
+										<button class="delete-button" ng-click='btn_delete(comment.commentId);'>
+											<i class="fa fa-trash"> </i>
+										</button>
+									</div>
+									<p class="attribution">
+										by {{comment.userName}} on {{comment.timeStamp.substr(0,25)}} &nbsp
+										<button class="like-button" ng-click='btn_like(comment.commentId);'>
+											<i class="fa fa-heart"> </i> {{comment.numberOfLikes}} 
+											{{comment.numberOfLikes == 1 ? 'Like' : 'Likes'}}
+										</button>
+									</p>
+								</div>
+							</article>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
